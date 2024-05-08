@@ -11,6 +11,9 @@ app.use(
     credentials: true,
   })
 );
+app.get("/",async (req:Request, res : Response)=>{
+	return res.send("Working");
+})
 app.post("/signup", async (req: Request, res: Response) => {
   const { email, password } = req.body;
   console.log(email, password);
