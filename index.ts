@@ -9,7 +9,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://cookie-testing-g10l.onrender.com", //for local testing use http://localhost:3000, you can use other ports as well.
+    origin: [
+      "https://cookie-testing-g10l.onrender.com",
+      "https://cookie-testing-frontend-teal.vercel.app",
+    ], //for local testing use http://localhost:3000, you can use other ports as well.
     credentials: true,
   })
 );
@@ -24,7 +27,8 @@ app.post("/signup", async (req: Request, res: Response) => {
   res.cookie("test", "12345", {
     // httpOnly: true, -> for local developement keep it true.
     secure: true,
-    domain: "https://cookie-testing-g10l.onrender.com",
+    // domain: "https://cookie-testing-g10l.onrender.com",
+    domain: "https://cookie-testing-frontend-teal.vercel.app",
     path: "/",
   });
   return res.json({ message: "Cookies sent, check the network tab", email });
