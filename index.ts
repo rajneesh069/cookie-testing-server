@@ -7,7 +7,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://cookie-testing-g10l.onrender.com", //for local testing use http://localhost:3000, you can use other ports as well.
     credentials: true,
   })
 );
@@ -15,9 +15,9 @@ app.post("/signup", async (req: Request, res: Response) => {
   const { email, password } = req.body;
   console.log(email, password);
   res.cookie("test", "12345", {
-    httpOnly: true,
+    // httpOnly: true, -> for local developement keep it true.
     secure: true,
-    domain: "http://localhost:3000",
+    domain: "https://cookie-testing-g10l.onrender.com",
     path: "/",
   });
   return res.json({ message: "Cookies sent, check the network tab", email });
