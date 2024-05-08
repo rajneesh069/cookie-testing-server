@@ -1,8 +1,10 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+
 const PORT = process.env.PORT || 5000;
 const app = express();
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(
@@ -11,9 +13,11 @@ app.use(
     credentials: true,
   })
 );
-app.get("/",async (req:Request, res : Response)=>{
-	return res.send("Working");
-})
+
+app.get("/", async (req: Request, res: Response) => {
+  return res.send("Working");
+});
+
 app.post("/signup", async (req: Request, res: Response) => {
   const { email, password } = req.body;
   console.log(email, password);
