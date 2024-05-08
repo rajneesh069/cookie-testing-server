@@ -26,7 +26,7 @@ app.post("/signup", async (req: Request, res: Response) => {
   console.log(email, password);
   res.cookie("test", "12345", {
     // httpOnly: true, -> for local developement keep it true.
-    // secure: true,
+    secure: true,
     // domain: "https://cookie-testing-g10l.onrender.com",
     domain: "https://cookie-testing-frontend-teal.vercel.app/",
     path: "/",
