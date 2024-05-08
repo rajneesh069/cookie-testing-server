@@ -24,7 +24,7 @@ app.post("/signup", async (req: Request, res: Response) => {
   res.cookie("test", "12345", {
     // httpOnly: true, -> for local developement keep it true.
     secure: true,
-    domain: "https://cookie-testing-g10l.onrender.com",
+    domain: "cookie-testing-g10l.onrender.com",
     path: "/",
   });
   return res.json({ message: "Cookies sent, check the network tab", email });
