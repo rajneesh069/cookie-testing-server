@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
+      //frontend domain array
       "https://cookie-testing-g10l.onrender.com",
       "https://cookie-testing-frontend-teal.vercel.app",
     ], //for local testing use http://localhost:3000, you can use other ports as well.
@@ -29,8 +30,8 @@ app.post("/signup", async (req: Request, res: Response) => {
     secure: true,
     sameSite: "none",
     // domain: "https://cookie-testing-g10l.onrender.com", //for local development use http://localhost:3000/
-    // domain: "https://cookie-testing-frontend-teal.vercel.app",
-    // path: "/",
+    // domain: "https://cookie-testing-frontend-teal.vercel.app", -> use a custom domain bro, then you can turn this domain option on. this is the frontend domain obviously.
+    path: "/",
   });
   return res.json({ message: "Cookies sent, check the network tab", email });
 });
