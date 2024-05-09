@@ -29,8 +29,8 @@ app.post("/signup", async (req: Request, res: Response) => {
     secure: true,
     sameSite: "none",
     // domain: "https://cookie-testing-g10l.onrender.com", //for local development use http://localhost:3000/
-    domain: "https://cookie-testing-frontend-teal.vercel.app",
-    path: "/",
+    // domain: "https://cookie-testing-frontend-teal.vercel.app",
+    // path: "/",
   });
   return res.json({ message: "Cookies sent, check the network tab", email });
 });
