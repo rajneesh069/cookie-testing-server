@@ -28,9 +28,9 @@ app.post("/signup", async (req: Request, res: Response) => {
   res.cookie("test", "12345", {
     // httpOnly: true, -> for local developement keep it true.
     secure: true,
-    sameSite: "none",
-    // domain: "https://cookie-testing-g10l.onrender.com", //for local development use http://localhost:3000/
-    // domain: "https://cookie-testing-frontend-teal.vercel.app", -> use a custom domain bro, then you can turn this domain option on. this is the frontend domain obviously.
+    // sameSite: "none",
+    // domain: "https://cookie-testing-g10l.onrender.com", //for local development use localhost
+    domain: "cookie-testing-frontend-teal.vercel.app", //-> use a custom domain bro, then you can turn this domain option on. this is the frontend domain obviously.
     path: "/",
   });
   return res.json({ message: "Cookies sent, check the network tab", email });
